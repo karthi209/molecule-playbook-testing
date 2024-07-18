@@ -32,7 +32,7 @@ jobs:
       - name: Install test dependencies
         run: |
           source venv/bin/activate
-          pip3 install ansible==8.2.0 docker molecule<6 molecule-plugins[docker] pytest pytest-testinfra yamllint flake8 ansible-lint ConfigParser
+          pip3 install ansible==8.2.0 docker molecule<6 molecule-plugins[docker] pytest pytest-testinfra
         shell: bash
 
       - name: verify molecule installation
