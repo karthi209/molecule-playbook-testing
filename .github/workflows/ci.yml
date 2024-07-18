@@ -25,6 +25,19 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Create requirements.txt
+        run: |
+          echo "ansible==8.2.0" >> requirements.txt
+          echo "docker" >> requirements.txt
+          echo "molecule<6" >> requirements.txt
+          echo "molecule-plugins[docker]" >> requirements.txt
+          echo "pytest" >> requirements.txt
+          echo "pytest-testinfra" >> requirements.txt
+          echo "yamllint" >> requirements.txt
+          echo "flake8" >> requirements.txt
+          echo "ansible-lint" >> requirements.txt
+          echo "ConfigParser" >> requirements.txt
+
       - name: Setup Python environment
         run: python3 -m venv venv
         shell: bash
@@ -32,7 +45,7 @@ jobs:
       - name: Install test dependencies
         run: |
           source venv/bin/activate
-          pip3 install ansible==8.2.0 docker molecule<6 molecule-plugins[docker] pytest pytest-testinfra
+          pip3 install      
         shell: bash
 
       - name: verify molecule installation
