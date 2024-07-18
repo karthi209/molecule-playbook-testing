@@ -53,6 +53,12 @@ jobs:
           source venv/bin/activate
           molecule --version
 
+      - name: Verfiu
+        run: |
+          cd /usr/lib64/python3.12/site-packages
+          ls -la
+        shell: bash
+
       - name: Run Molecule tests.
         run: |
           source venv/bin/activate
